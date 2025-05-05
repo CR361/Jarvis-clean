@@ -1,0 +1,614 @@
+/* globals.css */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix voor altijd footer onderaan */
+html, body {
+  height: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  scroll-behavior: smooth;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+/* main moet de beschikbare ruimte opvullen */
+main {
+  flex: 2;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 400;
+  padding: 0.5rem 0rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a:hover {
+  background-color: #ffffff;
+  color: #1e355a;
+}
+
+button {
+  background-color: #1a446b;
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #207da1;
+}
+
+button.custom-button {
+  background-color: var(--button-bg-color, #1f365c);
+  color: var(--button-text-color, #ffffff);
+}
+
+button.custom-button:hover {
+  background-color: var(--button-hover-bg, #0d4fac);
+}
+
+/* Toegevoegd voor kleine secundaire knoppen */
+button.outline {
+  background-color: transparent;
+  color: #1a446b;
+  border: 1px solid #1a446b;
+}
+
+button.outline:hover {
+  background-color: #e0e7ff;
+}
+a.custom-button {
+  background-color: var(--button-bg-color, #1f365c);
+  color: var(--button-text-color, #ffffff);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a.custom-button:hover {
+  background-color: var(--button-hover-bg, #0d4fac);
+}
+
+/* Inputs, textareas en selects verbeterd */
+input, textarea, select {
+  background-color: #fffefe;
+  color: #000000;
+  border: 1px solid #000000;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.5);
+}
+
+/* Specifiek voor disabled inputs (zoals totaalbedrag) */
+input:disabled {
+  background-color: #f5f5f5;
+  color: #6b7280;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to right, #0f172a, #355b99);
+  color: #ffffff;
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Header */
+header {
+  background: linear-gradient(to right, #0f172a, #355b99);
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  padding: 1rem 0;
+}
+
+/* Navigatie */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.nav-link {
+  background-color: transparent;
+  padding: 1.5rem 2rem;
+  border-radius: 0.5rem;
+}
+
+.nav-link:hover {
+  background-color: #285eb6;
+}
+
+a i {
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  max-height: fit-content;
+  margin: 2 auto;
+  padding: 2 3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Tabel stijlen */
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: separate;
+}
+
+th, td {
+  padding: 1rem 2rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  background-color: #f9fafb;
+  color: #374151;
+  font-weight: 600;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tiles */
+.tile {
+  background-color: #ffffff;
+  border-radius: 3rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 150px;
+  border: 2px solid #000000;
+}
+
+.tile i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.tile-count {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Neon blauw logo stijl */
+.neon-logo {
+  font-family: 'Orbitron', sans-serif;
+  color: #2c8b8b;
+  text-shadow: 0 0 1px #00FFFF, 0 0 2.5px #00FFFF, 0 0 3.75px #00FFFF, 0 0 5px #00FFFF, 0 0 5.75px #00FFFF, 0 0 7.5px #00FFFF, 0 0 8.75px #00FFFF;
+  font-size: 1.5rem;
+}
+
+/* Basisstijl voor formulieren */
+form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem; /* Vergroot de ruimte tussen de velden */
+  grid-template-columns: 1fr 1fr; /* Twee kolommen */
+}
+
+.grid > div {
+  display: contents;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grid .space-y-4 {
+  margin-bottom: 2rem; /* Extra ruimte onder elk veld */
+}
+
+.space-y-6 {
+  margin-bottom: 2.5rem; /* Vergrote marge voor specifieke secties */
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  background-color: #fafafa;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  border-color: #60a5fa;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #1e355a;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1a446b;
+}
+
+label {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Specifieke stijlen voor Customer Form */
+form {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem; /* Vergroot padding voor betere uitlijning */
+}
+
+button[type="submit"] {
+  width: 25%;
+  font-size: 0.8rem;
+}
+
+button[type="submit"]:disabled {
+  background-color: #cbd5e1; /* Lichte kleur wanneer de knop is uitgeschakeld */
+  cursor: not-allowed;
+}
+
+label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+input, textarea {
+  font-size: 1rem;
+  background-color: #f8fafc;
+}
+
+textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+/* Styling voor de notities sectie */
+.grid .notes {
+  grid-column: span 2;
+}
+/* Alleen voor dashboardpagina */
+.dashboard-container .grid {
+  display: grid;
+  gap: 1.5rem; /* Pas de gap aan naar wens */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsief gedrag */
+}
+.dashboard-container {
+  width: 100%;
+  max-width: 1200px; /* of groter als je wilt */
+  min-width: 900px;
+  margin: 4 auto; /* center het */
+  padding: 2rem; /* optioneel: wat ruimte aan de randen */
+}
+
+.dashboard-container .tile {
+  background-color: #ffffff;
+  border-radius: 3rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-width: 250px;
+  border: 2px solid #000000;
+}
+
+.dashboard-container .tile i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #000000;
+}
+
+.dashboard-container .tile-count {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+}
+.custom-button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+
+.custom-button:hover {
+  background-color: #4338ca;
+}
+
+.small-button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background-color 0.3s;
+}
+
+.small-button:hover {
+  background-color: #4338ca;
+}
+.custom-button {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.custom-button:hover {
+  background-color: #1d4ed8;
+}
+/* Vergroot de verticale ruimte tussen secties */
+.space-y-10 {
+  margin-bottom: 3rem; /* Vergrote marge onder elke sectie */
+}
+
+.space-y-6 {
+  margin-bottom: 2.5rem; /* Vergrote marge onder specifieke secties */
+}
+
+.grid {
+  gap: 2.5rem; /* Vergroot de ruimte tussen de grid-items */
+}
+/* Verklein de lettergrootte voor de klantpagina */
+.text-base {
+  font-size: 0.875rem; /* 14px */
+}
+
+.text-sm {
+  font-size: 0.75rem; /* 12px */
+}
+
+/* Verklein de marges tussen de secties */
+.space-y-12 {
+  margin-bottom: 2rem; /* van 3rem naar 2rem */
+}
+
+.space-y-8 {
+  margin-bottom: 1.5rem; /* van 2rem naar 1.5rem */
+}
+
+.gap-6 {
+  gap: 1.5rem; /* van 1.5rem naar 1rem */
+}
+
+.gap-4 {
+  gap: 1rem; /* van 1rem naar 0.75rem */
+}
+
+.gap-8 {
+  gap: 2rem; /* van 2rem naar 1.5rem */
+}
+
+/* Specifieke knoppen kleiner maken */
+.custom-button {
+  padding: 0.5rem 1rem; /* kleinere padding */
+  font-size: 0.75rem; /* 12px */
+}
+
+/* Verklein de padding van de kaartjes (facturen en contracten) */
+.p-8 {
+  padding: 1.5rem; /* van 2rem naar 1.5rem */
+}
+
+.p-6 {
+  padding: 1.25rem; /* van 1.5rem naar 1.25rem */
+}
+
+/* Verklein de tekst voor de knoppen */
+.custom-button.text-sm {
+  font-size: 0.75rem; /* 12px */
+}
+/* global.css */
+
+/* Styling voor de verwijderknop */
+.delete-button {
+  background-color: #ff4d4d; /* Rood */
+  color: white; /* Witte tekst */
+  border: none;
+  padding: 10px 10px;
+  font-size: 11px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect voor de verwijderknop */
+.delete-button:hover {
+  background-color: #ff1a1a; /* Donkerder rood als je over de knop hovert */
+}
+
+/* Focus effect voor de verwijderknop (wanneer de knop is geselecteerd) */
+.delete-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.5); /* Rode focus shadow */
+}
+
+/* Optioneel: Toevoegen van een 'delete' icon naast de tekst (indien gewenst) */
+.delete-button i {
+  margin-right: 8px; /* Afstand tussen het icoon en de tekst */
+}
+.invoice-header-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Styling voor de invoice getal knop*/
+.custom-buttoninvoice {
+  background-color: #1d304d; /* Rood */
+  color: white; /* Witte tekst */
+  border: none;
+  padding: 7px 9px;
+  font-size: 8px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+/* global.css */
+
+/* Algemene stijlen voor de tabel */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #ffffff; /* Donkere achtergrond voor de koptekst */
+  font-weight: bold;
+}
+
+td {
+  background-color: #ffffff; /* Donkere achtergrond voor de cellen */
+}
+
+/* Actieknoppen (Bekijken en Verwijder) naast elkaar */
+td.space-x-2 {
+  display: flex;
+  justify-content: flex-start; /* Zorg ervoor dat de knoppen aan de linkerzijde uitgelijnd zijn */
+  gap: 10px; /* Ruimte tussen de knoppen */
+}
+
+button {
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/* Knoppenstijl */
+button.text-blue-500 {
+  color: #ffffff;
+}
+
+button.text-blue-500:hover {
+  color: #ffffff;
+}
+
+button.text-red-500 {
+  color: #ffffff;
+}
+
+button.text-red-500:hover {
+  color: #ffffff;
+}
+
+/* Flexbox voor actieknoppen die kleiner moeten zijn */
+button.size-icon {
+  padding: 8px;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Zorg ervoor dat de actieknoppen naast elkaar staan */
+button.space-x-2 {
+  margin-right: 8px;
+}
+
+/* Specifieke stijlen voor de "Acties"-kolom */
+th:nth-child(6), td:nth-child(6) {
+  width: 200px; /* Breder maken van de actieskolom */
+}
